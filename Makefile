@@ -117,3 +117,8 @@ test:
 .PHONY: fmt
 fmt:
 	go fmt ./...
+build_protoc:
+	wget -P /opt https://github.com/protocolbuffers/protobuf/releases/download/v22.2/protoc-22.2-linux-x86_64.zip
+	unzip -d /opt/protoc /opt/protoc-22.2-linux-x86_64.zip
+	ls -lR /opt/protoc
+	cp /opt/protoc/bin/protoc /usr/local/bin/protoc
